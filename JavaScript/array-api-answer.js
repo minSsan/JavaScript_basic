@@ -47,6 +47,36 @@ const students = [
 
 // Q.6
 {
-    const result = students.map((student) => student.enrolled);
+    // const result = students.map((student) => student.enrolled); // 오답
     const result = students.filter((student) => student.enrolled);
+}
+
+// Q.7
+{
+    const result = students.map((student) => student.score);
+}
+
+// Q.8
+{
+    const result = students.some((student) => student.score < 50);
+}
+
+// Q.9
+{
+    const result = students.reduce((prev, current_student) => prev + current_student.score, 0) / students.length;
+}
+
+// Q.10
+{
+    const result = students
+    .map((students) => students.score)
+    .join();
+}
+
+// Q.11
+{
+    const result = students
+    .map((students) => students.score)
+    .sort()
+    .join();
 }

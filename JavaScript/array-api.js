@@ -54,12 +54,10 @@ const students = [
 
 // Q6. make an array of enrolled students
 {
-    // let result = new Array();
-    // students.forEach((value) => {
-    //     if(value.enrolled) result.push(value);
-    // });
-
-    const result = students.map((student) => student.enrolled);
+    let result = new Array();
+    students.forEach((value) => {
+        if(value.enrolled) result.push(value);
+    });
     console.log(result);
 }
 
@@ -78,9 +76,11 @@ const students = [
 
 // Q9. compute students' average score
 {
-    let result = 0;
-    students.forEach((value) => result += value.score);
-    console.log(result / students.length);
+    // let result = 0;
+    // students.forEach((value) => result += value.score);
+    // console.log(result / students.length);
+    const result = students.reduce((prev, current_student) => prev + current_student.score, 0) / students.length;
+    console.log(result);
 }
 
 // Q10. make a string containing all the scores
