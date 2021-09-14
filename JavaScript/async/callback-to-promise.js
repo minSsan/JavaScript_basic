@@ -1,6 +1,6 @@
 // Callback Hell example
 class UserStorage {
-  loginUser = (id, password) => {
+  loginUser(id, password) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (
@@ -13,9 +13,9 @@ class UserStorage {
         }
       }, 2000);
     });
-  };
+  }
 
-  getRoles = (user) => {
+  getRoles(user) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (user === "min") {
@@ -25,11 +25,7 @@ class UserStorage {
         }
       }, 1000);
     });
-  };
-
-  userWithRole = (user) => {
-    alert(`Hello ${user.name}, you have a ${user.role} role`);
-  };
+  }
 }
 
 const userStorage = new UserStorage();
@@ -39,4 +35,5 @@ const password = prompt("enter your password");
 userStorage
   .loginUser(id, password)
   .then((user) => userStorage.getRoles(user))
-  .then((user) => userStorage.userWithRole(user));
+  .then((user) => alert(`Hello ${user.name}, you have a ${user.role} role`))
+  .catch(console.log);
